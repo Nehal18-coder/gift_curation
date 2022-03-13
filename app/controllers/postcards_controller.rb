@@ -3,7 +3,8 @@ class PostcardsController < ApplicationController
 
   # GET /postcards
   def index
-    @postcards = Postcard.page(params[:page]).per(10)
+    @q = Postcard.ransack(params[:q])
+    @postcards = @q.result(:distinct => true).includes(:user, :category).page(params[:page]).per(10)
   end
 
   # GET /postcards/1
