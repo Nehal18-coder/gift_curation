@@ -5,6 +5,8 @@ class Category < ApplicationRecord
 
   # Validations
 
+  validates :type_of_postcard, :inclusion => { :in => [ "Travel", "Music", "Art", "Inspiration" ]  }
+
   # Scopes
 
   def to_s
