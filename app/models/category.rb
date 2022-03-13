@@ -1,6 +1,9 @@
 class Category < ApplicationRecord
   # Direct associations
 
+  has_many   :postcards,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
