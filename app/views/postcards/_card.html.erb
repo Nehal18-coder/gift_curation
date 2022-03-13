@@ -1,0 +1,76 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Postcard #<%= postcard.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Postcard image</dt>
+      <!-- Display postcard_image start -->
+      <dd><%= postcard.postcard_image %></dd>
+      <!-- Display postcard_image end -->
+
+      <dt>Postcard name</dt>
+      <!-- Display postcard_name start -->
+      <dd><%= postcard.postcard_name %></dd>
+      <!-- Display postcard_name end -->
+
+      <dt>Description</dt>
+      <!-- Display description start -->
+      <dd><%= postcard.description %></dd>
+      <!-- Display description end -->
+
+      <dt>Price</dt>
+      <!-- Display price start -->
+      <dd><%= postcard.price %></dd>
+      <!-- Display price end -->
+
+      <dt>Delivery time</dt>
+      <!-- Display delivery_time start -->
+      <dd><%= postcard.delivery_time %></dd>
+      <!-- Display delivery_time end -->
+
+      <dt>Category</dt>
+      <!-- Display category_id start -->
+      <dd><%= postcard.category_id %></dd>
+      <!-- Display category_id end -->
+
+      <dt>Bookmark</dt>
+      <!-- Display bookmark_id start -->
+      <dd><%= postcard.bookmark_id %></dd>
+      <!-- Display bookmark_id end -->
+
+      <dt>User</dt>
+      <!-- Display user_id start -->
+      <dd><%= postcard.user_id %></dd>
+      <!-- Display user_id end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back postcard, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link postcard start -->
+      <div class="col">
+        <%= link_to edit_postcard_url(postcard), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link postcard end -->
+
+      <!-- Delete link postcard start -->
+      <div class="col">
+        <%= link_to postcard, method: :delete, data: { confirm: "Do you really want to delete this postcard?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link postcard end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(postcard.updated_at) %> ago
+  </div>
+</div>
