@@ -1,7 +1,6 @@
 <% was_validated = user.errors.any? %>
 
 <%= form_with(model: user, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for username start -->
   <div class="form-group">
     <% username_class = "form-control" %>
     <% username_was_invalid = user.errors.include?(:username) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :username %>
-    <!-- Input for username start -->
     <%= f.text_field :username, class: username_class, placeholder: "Enter username" %>
-    <!-- Input for username end -->
     <% if username_was_invalid %>
       <% user.errors.full_messages_for(:username).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for username end -->
-  <!-- Label and input for password start -->
   <div class="form-group">
     <% password_class = "form-control" %>
     <% password_was_invalid = user.errors.include?(:password) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :password %>
-    <!-- Input for password start -->
     <%= f.text_field :password, class: password_class, placeholder: "Enter password" %>
-    <!-- Input for password end -->
     <% if password_was_invalid %>
       <% user.errors.full_messages_for(:password).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for password end -->
-  <!-- Label and input for birthday start -->
   <div class="form-group">
     <% birthday_class = "form-control" %>
     <% birthday_was_invalid = user.errors.include?(:birthday) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :birthday %>
-    <!-- Input for birthday start -->
     <%= f.date_select :birthday, class: birthday_class, placeholder: "Enter birthday" %>
-    <!-- Input for birthday end -->
     <% if birthday_was_invalid %>
       <% user.errors.full_messages_for(:birthday).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for birthday end -->
-  <!-- Label and input for interests start -->
   <div class="form-group">
     <% interest_class = "form-control" %>
     <% interest_was_invalid = user.errors.include?(:interest) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :interests %>
-    <!-- Input for interests start -->
     <%= f.text_area :interests, class: interest_class, placeholder: "Enter interest" %>
-    <!-- Input for interests end -->
     <% if interest_was_invalid %>
       <% user.errors.full_messages_for(:interest).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for interests end -->
-  <!-- Label and input for address start -->
   <div class="form-group">
     <% address_class = "form-control" %>
     <% address_was_invalid = user.errors.include?(:address) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :address %>
-    <!-- Input for address start -->
     <%= f.text_field :address, class: address_class, placeholder: "Enter address" %>
-    <!-- Input for address end -->
     <% if address_was_invalid %>
       <% user.errors.full_messages_for(:address).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,8 +111,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for address end -->
-  <!-- Label and input for category_id start -->
   <div class="form-group">
     <% category_class = "form-control" %>
     <% category_was_invalid = user.errors.include?(:category) %>
@@ -145,9 +124,7 @@
     <% end %>
 
     <%= f.label :category_id %>
-    <!-- Input for category_id start -->
     <%= f.number_field :category_id, class: category_class, placeholder: "Enter category" %>
-    <!-- Input for category_id end -->
     <% if category_was_invalid %>
       <% user.errors.full_messages_for(:category).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -156,8 +133,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for category_id end -->
-  <!-- Label and input for postcard_id start -->
   <div class="form-group">
     <% postcard_class = "form-control" %>
     <% postcard_was_invalid = user.errors.include?(:postcard) %>
@@ -171,9 +146,7 @@
     <% end %>
 
     <%= f.label :postcard_id %>
-    <!-- Input for postcard_id start -->
     <%= f.number_field :postcard_id, class: postcard_class, placeholder: "Enter postcard" %>
-    <!-- Input for postcard_id end -->
     <% if postcard_was_invalid %>
       <% user.errors.full_messages_for(:postcard).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -182,6 +155,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for postcard_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

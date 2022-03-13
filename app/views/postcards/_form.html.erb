@@ -1,7 +1,6 @@
 <% was_validated = postcard.errors.any? %>
 
 <%= form_with(model: postcard, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for postcard_image start -->
   <div class="form-group">
     <% postcard_image_class = "form-control" %>
     <% postcard_image_was_invalid = postcard.errors.include?(:postcard_image) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :postcard_image %>
-    <!-- Input for postcard_image start -->
     <%= f.file_field :postcard_image, class: "form-control" %>
-    <!-- Input for postcard_image end -->
     <% if postcard_image_was_invalid %>
       <% postcard.errors.full_messages_for(:postcard_image).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for postcard_image end -->
-  <!-- Label and input for postcard_name start -->
   <div class="form-group">
     <% postcard_name_class = "form-control" %>
     <% postcard_name_was_invalid = postcard.errors.include?(:postcard_name) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :postcard_name %>
-    <!-- Input for postcard_name start -->
     <%= f.text_area :postcard_name, class: postcard_name_class, placeholder: "Enter postcard name" %>
-    <!-- Input for postcard_name end -->
     <% if postcard_name_was_invalid %>
       <% postcard.errors.full_messages_for(:postcard_name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for postcard_name end -->
-  <!-- Label and input for description start -->
   <div class="form-group">
     <% description_class = "form-control" %>
     <% description_was_invalid = postcard.errors.include?(:description) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :description %>
-    <!-- Input for description start -->
     <%= f.text_area :description, class: description_class, placeholder: "Enter description" %>
-    <!-- Input for description end -->
     <% if description_was_invalid %>
       <% postcard.errors.full_messages_for(:description).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for description end -->
-  <!-- Label and input for price start -->
   <div class="form-group">
     <% price_class = "form-control" %>
     <% price_was_invalid = postcard.errors.include?(:price) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :price %>
-    <!-- Input for price start -->
     <%= f.text_field :price, class: price_class, placeholder: "Enter price" %>
-    <!-- Input for price end -->
     <% if price_was_invalid %>
       <% postcard.errors.full_messages_for(:price).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for price end -->
-  <!-- Label and input for delivery_time start -->
   <div class="form-group">
     <% delivery_time_class = "form-control" %>
     <% delivery_time_was_invalid = postcard.errors.include?(:delivery_time) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :delivery_time %>
-    <!-- Input for delivery_time start -->
     <%= f.text_field :delivery_time, class: delivery_time_class, placeholder: "Enter delivery time" %>
-    <!-- Input for delivery_time end -->
     <% if delivery_time_was_invalid %>
       <% postcard.errors.full_messages_for(:delivery_time).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,8 +111,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for delivery_time end -->
-  <!-- Label and input for category_id start -->
   <div class="form-group">
     <% category_class = "form-control" %>
     <% category_was_invalid = postcard.errors.include?(:category) %>
@@ -145,9 +124,7 @@
     <% end %>
 
     <%= f.label :category_id %>
-    <!-- Input for category_id start -->
     <%= f.collection_select :category_id, Category.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for category_id end -->
     <% if category_was_invalid %>
       <% postcard.errors.full_messages_for(:category).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -156,8 +133,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for category_id end -->
-  <!-- Label and input for bookmark_id start -->
   <div class="form-group">
     <% bookmark_class = "form-control" %>
     <% bookmark_was_invalid = postcard.errors.include?(:bookmark) %>
@@ -171,9 +146,7 @@
     <% end %>
 
     <%= f.label :bookmark_id %>
-    <!-- Input for bookmark_id start -->
     <%= f.number_field :bookmark_id, class: bookmark_class, placeholder: "Enter bookmark" %>
-    <!-- Input for bookmark_id end -->
     <% if bookmark_was_invalid %>
       <% postcard.errors.full_messages_for(:bookmark).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -182,8 +155,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for bookmark_id end -->
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <% user_class = "form-control" %>
     <% user_was_invalid = postcard.errors.include?(:user) %>
@@ -197,9 +168,7 @@
     <% end %>
 
     <%= f.label :user_id %>
-    <!-- Input for user_id start -->
     <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for user_id end -->
     <% if user_was_invalid %>
       <% postcard.errors.full_messages_for(:user).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -208,6 +177,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
