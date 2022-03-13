@@ -3,7 +3,7 @@ class PostcardsController < ApplicationController
 
   # GET /postcards
   def index
-    @postcards = Postcard.all
+    @postcards = Postcard.page(params[:page]).per(10)
   end
 
   # GET /postcards/1
