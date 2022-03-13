@@ -1,0 +1,31 @@
+<% was_validated = category.errors.any? %>
+
+<%= form_with(model: category, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for type_of_postcard start -->
+  <div class="form-group">
+    <% type_of_postcard_class = "form-control" %>
+    <% type_of_postcard_was_invalid = category.errors.include?(:type_of_postcard) %>
+
+    <% if was_validated %>
+      <% if type_of_postcard_was_invalid %>
+        <% type_of_postcard_class << " is-invalid" %>
+      <% else %>
+        <% type_of_postcard_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :type_of_postcard %>
+    <!-- Input for type_of_postcard start -->
+    <%= f.text_area :type_of_postcard, class: type_of_postcard_class, placeholder: "Enter type of postcard" %>
+    <!-- Input for type_of_postcard end -->
+    <% if type_of_postcard_was_invalid %>
+      <% category.errors.full_messages_for(:type_of_postcard).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for type_of_postcard end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
