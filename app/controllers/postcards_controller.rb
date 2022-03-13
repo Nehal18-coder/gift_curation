@@ -42,8 +42,14 @@ class PostcardsController < ApplicationController
   # DELETE /postcards/1
   def destroy
     @postcard.destroy
-    redirect_to postcards_url, notice: 'Postcard was successfully destroyed.'
+    message = "Postcard was successfully deleted."
+    if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+      redirect_back fallback_location: request.referrer, notice: message
+    else
+      redirect_to postcards_url, notice: message
+    end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
