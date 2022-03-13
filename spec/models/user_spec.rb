@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:postcards) }
+
     it { should have_many(:bookmarks) }
 
     end
