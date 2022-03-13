@@ -1,0 +1,80 @@
+<!-- Form postcard start -->
+<%= form_with(model: @postcard, local: true) do |f| %>
+<!-- Form postcard end -->
+
+  <!-- Label and input for postcard_image start -->
+  <div class="form-group">
+    <%= f.label :postcard_image %>
+
+    <!-- Input for postcard_image start -->
+    <%= f.text_field :postcard_image, class: "form-control" %>
+    <!-- Input for postcard_image end -->
+  </div>
+  <!-- Label and input for postcard_image end -->
+
+  <!-- Label and input for postcard_name start -->
+  <div class="form-group">
+    <%= f.label :postcard_name %>
+    <!-- Input for postcard_name start -->
+    <%= f.text_area :postcard_name, rows: "3", class: "form-control" %>
+    <!-- Input for postcard_name end -->
+  </div>
+  <!-- Label and input for postcard_name end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <%= f.label :description %>
+    <!-- Input for description start -->
+    <%= f.text_area :description, rows: "3", class: "form-control" %>
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <%= f.label :price %>
+
+    <!-- Input for price start -->
+    <%= f.text_field :price, class: "form-control" %>
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for delivery_time start -->
+  <div class="form-group">
+    <%= f.label :delivery_time %>
+
+    <!-- Input for delivery_time start -->
+    <%= f.text_field :delivery_time, class: "form-control" %>
+    <!-- Input for delivery_time end -->
+  </div>
+  <!-- Label and input for delivery_time end -->
+
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <%= f.label :category_id %>
+
+    <!-- Input for category_id start -->
+    <%= f.text_field :category_id, class: "form-control" %>
+    <!-- Input for category_id end -->
+  </div>
+  <!-- Label and input for category_id end -->
+
+  <!-- Label and input for bookmark_id start -->
+  <div class="form-group">
+    <%= f.label :bookmark_id %>
+
+    <!-- Input for bookmark_id start -->
+    <%= f.text_field :bookmark_id, class: "form-control" %>
+    <!-- Input for bookmark_id end -->
+  </div>
+  <!-- Label and input for bookmark_id end -->
+
+  <!-- Label and input for user_id start -->
+  <!-- Input for user_id start -->
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <!-- Input for user_id end -->
+  <!-- Label and input for user_id end -->
+
+  <%= f.submit "Create postcard", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
