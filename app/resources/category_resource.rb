@@ -6,8 +6,7 @@ class CategoryResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :postcards
+  has_many :postcards
 
   # Indirect associations
-
 end

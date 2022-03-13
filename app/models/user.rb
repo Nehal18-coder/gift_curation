@@ -2,21 +2,21 @@ class User < ApplicationRecord
   # Direct associations
 
   has_many   :postcards,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :bookmarks,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
   # Validations
 
-  validates :interests, :inclusion => { :in => [ "Travel", "Music", "Art", "Inspiration" ]  }
+  validates :interests,
+            inclusion: { in: ["Travel", "Music", "Art", "Inspiration"] }
 
   # Scopes
 
   def to_s
     username
   end
-
 end

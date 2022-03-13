@@ -13,7 +13,7 @@ class Api::V1::PostcardsController < Api::V1::GraphitiController
     postcard = PostcardResource.build(params)
 
     if postcard.save
-      render jsonapi: postcard, status: 201
+      render jsonapi: postcard, status: :created
     else
       render jsonapi_errors: postcard
     end
@@ -33,7 +33,7 @@ class Api::V1::PostcardsController < Api::V1::GraphitiController
     postcard = PostcardResource.find(params)
 
     if postcard.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: postcard
     end

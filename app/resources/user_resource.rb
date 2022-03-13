@@ -17,5 +17,4 @@ class UserResource < ApplicationResource
   has_many   :bookmarks
 
   # Indirect associations
-
 end

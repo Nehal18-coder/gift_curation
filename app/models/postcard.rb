@@ -6,7 +6,7 @@ class Postcard < ApplicationRecord
   belongs_to :category
 
   belongs_to :user,
-             :counter_cache => true
+             counter_cache: true
 
   # Indirect associations
 
@@ -17,5 +17,4 @@ class Postcard < ApplicationRecord
   def to_s
     created_at
   end
-
 end
