@@ -16,7 +16,7 @@
 
     <%= f.label :postcard_image %>
     <!-- Input for postcard_image start -->
-    <%= f.text_field :postcard_image, class: postcard_image_class, placeholder: "Enter postcard image" %>
+    <%= f.file_field :postcard_image, class: "form-control" %>
     <!-- Input for postcard_image end -->
     <% if postcard_image_was_invalid %>
       <% postcard.errors.full_messages_for(:postcard_image).each do |message| %>

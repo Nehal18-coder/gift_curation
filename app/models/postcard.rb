@@ -1,4 +1,6 @@
 class Postcard < ApplicationRecord
+  mount_base64_uploader :postcard_image, PostcardImageUploader
+
   # Direct associations
 
   belongs_to :category

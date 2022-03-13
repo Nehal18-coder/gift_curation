@@ -7,7 +7,9 @@
     <dl class="mb-1">
       <dt>Postcard image</dt>
       <!-- Display postcard_image start -->
-      <dd><%= postcard.postcard_image %></dd>
+      <dd>
+        <%= cl_image_tag @postcard.postcard_image, class: "img-fluid" %>
+      </dd>
       <!-- Display postcard_image end -->
 
       <dt>Postcard name</dt>
