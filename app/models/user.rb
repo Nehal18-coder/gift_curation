@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   # Validations
 
+  validates :interests, :inclusion => { :in => [ "Travel", "Music", "Art", "Inspiration" ]  }
+
   # Scopes
 
   def to_s
