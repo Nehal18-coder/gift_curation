@@ -34,7 +34,11 @@
 
       <dt>Category</dt>
       <!-- Display category_id start -->
-      <dd><%= postcard.category_id %></dd>
+      <dd>
+        <% if @postcard.category.present? %>
+          <%= link_to postcard.category, postcard.category %>
+        <% end %>
+      </dd>
       <!-- Display category_id end -->
 
       <dt>Bookmark</dt>
@@ -44,7 +48,11 @@
 
       <dt>User</dt>
       <!-- Display user_id start -->
-      <dd><%= postcard.user_id %></dd>
+      <dd>
+        <% if @postcard.user.present? %>
+          <%= link_to postcard.user, postcard.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id end -->
 
     </dl>
