@@ -3,9 +3,11 @@ class Postcard < ApplicationRecord
 
   # Direct associations
 
-  belongs_to :category
+  belongs_to :category,
+             optional: true
 
   belongs_to :user,
+             optional: true,
              counter_cache: true
 
   # Indirect associations
